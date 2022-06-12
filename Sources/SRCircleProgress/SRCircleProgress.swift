@@ -74,7 +74,7 @@ open class SRCircleProgress: UIView {
      The default is UIColor.systemBackground
      */
     @IBInspectable
-    public var backgroundLineColor: UIColor = .systemBackground {
+    public var backgroundLineColor: UIColor = .lightGray {
         didSet {
             backgroundLineLayer.strokeColor = backgroundLineColor.cgColor
         }
@@ -87,7 +87,7 @@ open class SRCircleProgress: UIView {
      The default is 6.
      */
     @IBInspectable
-    public var progressLineWidth: Float = 6 {
+    public var progressLineWidth: Float = 12 {
         didSet {
             progressLineLayer.lineWidth = CGFloat(progressLineWidth)
         }
@@ -100,7 +100,7 @@ open class SRCircleProgress: UIView {
      The default is 12.
      */
     @IBInspectable
-    public var backgroundLineWidth: Float = 12 {
+    public var backgroundLineWidth: Float = 5 {
         didSet {
             backgroundLineLayer.lineWidth = CGFloat(backgroundLineWidth)
         }
