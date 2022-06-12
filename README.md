@@ -24,6 +24,7 @@ SRCircleProgress is also available through Swift Package Manager. Add SRCirclePr
 .package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.0")
 ```
 ## Usage
+The basic usage is as follows.
 ```Swift
 let circleProgressView = SRCircleProgress(frame: .zero)
 view.addSubview(circleProgressView)
@@ -35,3 +36,18 @@ NSLayoutConstraint.activate([
     circleProgressView.heightAnchor.constraint(equalToConstant: 250),
 ])
 ```
+To set the progress on the progress bar, 
+```Swift
+circleProgressView.setProgress(0.5, animated: true)
+```
+The current progress is represented by a floating-point value between 0.0 and 1.0, inclusive, where 1.0 indicates the completion of the task. The default value is 0.0. Values less than 0.0 and greater than 1.0 are pinned to those limits.
+
+### Properties
+```Swift
+circleProgressView.progress = 15 // Set the progress without animation.
+circleProgressView.progressLineColor = .systemBlue // The color shown for the portion of the progress view that is filled.
+circleProgressView.progressLineWidth = 6 // Specifies the line width of the progress view.
+circleProgressView.backgroundLineWidth = 12 // Specifies the line width of the view behind the progress view.
+circleProgressView.animationDuration = 0.2 // Specifies the duration of the animation when setProgress(_:animated:) is executed
+```
+
