@@ -29,6 +29,8 @@ The basic usage is as follows.
 let circleProgressView = SRCircleProgress(frame: .zero)
 view.addSubview(circleProgressView)
 
+circleProgressView.translatesAutoresizingMaskIntoConstraints = false
+
 NSLayoutConstraint.activate([
     circleProgressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
     circleProgressView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
