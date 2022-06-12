@@ -48,7 +48,11 @@ open class SRCircleProgress: UIView {
     @IBInspectable
     open var progress: Float {
         get { Float(progressLineLayer.strokeEnd) }
-        set { progressLineLayer.strokeEnd = CGFloat(newValue) }
+        set {
+            disableAnimation {
+                progressLineLayer.strokeEnd = CGFloat(newValue)
+            }
+        }
     }
 
     /**
@@ -198,6 +202,13 @@ open class SRCircleProgress: UIView {
     private func addLayer() {
         layer.addSublayer(backgroundLineLayer)
         layer.addSublayer(progressLineLayer)
+    }
+    
+    private func disableAnimation(_ block: () -> ()) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        block()
+        CATransaction.commit()
     }
 
     private func setup() {
