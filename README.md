@@ -49,5 +49,18 @@ circleProgressView.progressLineColor = .systemBlue // The color shown for the po
 circleProgressView.progressLineWidth = 6 // Specifies the line width of the progress view.
 circleProgressView.backgroundLineWidth = 12 // Specifies the line width of the view behind the progress view.
 circleProgressView.animationDuration = 0.2 // Specifies the duration of the animation when setProgress(_:animated:) is executed
+circleProgressView.progressAngle = .lowerLeftToLowerRight // Change the shape of the progress view
 ```
+To change the shape of the progress view, use the `progressAngle` property.
+Possible values for `progressAngle` are as follows
+```Swift
+enum ProgressAngle {
+    case topToTop
+    case bottomToBottom
+    case lowerLeftToLowerRight
+    case leftToRight
+}
+```
+
+
 
