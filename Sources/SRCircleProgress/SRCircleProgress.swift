@@ -45,7 +45,6 @@ open class SRCircleProgress: UIView {
 
      The current progress is represented by a floating-point value between 0.0 and 1.0, inclusive, where 1.0 indicates the completion of the task. The default value is 0.0. Values less than 0.0 and greater than 1.0 are pinned to those limits.
      */
-    @IBInspectable
     open var progress: Float {
         get { Float(progressLineLayer.strokeEnd) }
         set {
@@ -53,6 +52,18 @@ open class SRCircleProgress: UIView {
                 progressLineLayer.strokeEnd = CGFloat(newValue)
             }
         }
+    }
+    
+    /**
+     The current percent shown by the receiver.
+     
+     
+     The current progress is represented by a integert value between 0 and 100, inclusive, where 100 indicates the completion of the task. The default value is 0. Values less than 0 and greater than 100 are pinned to those limits.
+     */
+    @IBInspectable
+    open var percent: Int {
+        get { Int(progress * 100) }
+        set { progress = Float(newValue) / 100 }
     }
 
     /**
