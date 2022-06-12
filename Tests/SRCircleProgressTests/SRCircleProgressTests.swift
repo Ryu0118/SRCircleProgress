@@ -1,4 +1,6 @@
+#if os(iOS)
 import XCTest
+
 @testable import SRCircleProgress
 
 final class SRCircleProgressTests: XCTestCase {
@@ -9,3 +11,4 @@ final class SRCircleProgressTests: XCTestCase {
         // XCTAssertEqual(SRCircleProgress().text, "Hello, World!")
     }
 }
+#endif

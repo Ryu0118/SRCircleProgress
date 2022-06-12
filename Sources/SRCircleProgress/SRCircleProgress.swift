@@ -1,3 +1,4 @@
+#if !os(macOS)
 import UIKit
 
 @IBDesignable
@@ -218,3 +219,5 @@ open class SRCircleProgress: UIView {
     }
 
 }
+
+#endif
