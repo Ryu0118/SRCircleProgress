@@ -27,6 +27,7 @@ SRCircleProgress is also available through Swift Package Manager. Add SRCirclePr
 The basic usage is as follows.
 ```Swift
 let circleProgressView = SRCircleProgress(frame: .zero)
+circleProgressView.translatesAutoresizingMaskIntoConstraints = false
 view.addSubview(circleProgressView)
 
 NSLayoutConstraint.activate([
