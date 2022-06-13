@@ -58,12 +58,12 @@ Possible values for `progressAngle` are as follows
 enum ProgressAngle {
     case topToTop
     case bottomToBottom
-    case lowerLeftToLowerRight
-    case leftToRight
+    case lowerLeftToLowerRight(offset: Double = 0)
+    case leftToRight(offset: Double = 0)
 }
 ```
 |topToTop|bottomToBottom|
 |---|---|
 |![topToTop](https://user-images.githubusercontent.com/87907656/173399400-fd6a3be6-80ae-46c6-ab73-ba86c4831842.png)|![bottomToBottom](https://user-images.githubusercontent.com/87907656/173399395-7fbf8aad-fd00-4b54-bd2e-4129a20c196f.png)|
-|topToTop|bottomToBottom|
+|leftToRight(offset = 0)|lowerLeftToLowerRight(offset = 0)|
 |![leftToRight](https://user-images.githubusercontent.com/87907656/173399384-781f3f3d-2f05-4e66-bb4e-a8585e828b57.png)|![lowerLeftToLowerRight](https://user-images.githubusercontent.com/87907656/173399405-e36b8b44-4479-4c5e-970b-5007803d0103.png)|
