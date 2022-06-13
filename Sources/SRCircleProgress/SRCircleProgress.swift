@@ -10,7 +10,10 @@ open class SRCircleProgress: UIView {
      To customize the angle more, assign arbitrary values to the startAngle and endAngle properties of SRCircleProgress
      */
     public enum ProgressAngle {
-        case topToTop, bottomToBottom, lowerLeftToLowerRight, leftToRight
+        case topToTop
+        case bottomToBottom
+        case lowerLeftToLowerRight(offset: Double = 0)
+        case leftToRight(offset: Double = 0)
         
         fileprivate var startAngle: CGFloat {
             switch self {
@@ -18,10 +21,10 @@ open class SRCircleProgress: UIView {
                 return CGFloat(-Double.pi / 2)
             case .bottomToBottom:
                 return CGFloat(Double.pi / 2)
-            case .lowerLeftToLowerRight:
-                return CGFloat(3 * Double.pi / 4)
-            case .leftToRight:
-                return CGFloat(Double.pi)
+            case .lowerLeftToLowerRight(let offset):
+                return CGFloat(angleToRadian(offset) + 3 * Double.pi / 4)
+            case .leftToRight(let offset):
+                return CGFloat(Double.pi + angleToRadian(offset))
             }
         }
         
@@ -31,12 +34,17 @@ open class SRCircleProgress: UIView {
                 return CGFloat(3 * Double.pi / 2)
             case .bottomToBottom:
                 return CGFloat(5 * Double.pi / 2)
-            case .lowerLeftToLowerRight:
-                return CGFloat(Double.pi / 4)
-            case .leftToRight:
-                return 0
+            case .lowerLeftToLowerRight(let offset):
+                return CGFloat(-angleToRadian(offset) + Double.pi / 4)
+            case .leftToRight(let offset):
+                return -angleToRadian(offset)
             }
         }
+        
+        private func angleToRadian(_ angle: Double) -> Double {
+            return 2 * Double.pi * angle / 360
+        }
+        
     }
     
     // MARK: Public Properties
@@ -118,6 +126,19 @@ open class SRCircleProgress: UIView {
      */
     public var animationDuration: TimeInterval = 0.2
     
+    /**
+     Reverse the direction of the color to be filled.
+     */
+    public var isReverse: Bool = false {
+        willSet {
+            if newValue && !isReverse {
+                self.transform = CGAffineTransform(scaleX: -1, y: 1)
+            }
+            else if !newValue && isReverse {
+                self.transform = .identity
+            }
+        }
+    }
     /**
      Specifies the angle at which the progress view begins and ends.
      
