@@ -1,5 +1,5 @@
 # SRCircleProgress
-
+[![CI](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml)
 [![Release](https://img.shields.io/github/v/release/Ryu0118/SRCircleProgress)](https://github.com/Ryu0118/SRCircleProgress/releases/latest)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/StringTransform.svg)](https://cocoapods.org/pods/SRCircleProgress)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Ryu0118/SRCirclrProgress)
@@ -29,13 +29,11 @@ The basic usage is as follows.
 let circleProgressView = SRCircleProgress(frame: .zero)
 view.addSubview(circleProgressView)
 
-circleProgressView.translatesAutoresizingMaskIntoConstraints = false
-
 NSLayoutConstraint.activate([
     circleProgressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
     circleProgressView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
     circleProgressView.widthAnchor.constraint(equalToConstant: 150),
-    circleProgressView.heightAnchor.constraint(equalToConstant: 250),
+    circleProgressView.heightAnchor.constraint(equalToConstant: 150),
 ])
 ```
 To set the progress on the progress bar, 
@@ -63,6 +61,4 @@ enum ProgressAngle {
     case leftToRight
 }
 ```
-
-
-
+#### `topToTop`
