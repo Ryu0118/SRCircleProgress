@@ -21,7 +21,7 @@ pod 'SRCircleProgress'
 ### Swift Package Manager
 SRCircleProgress is also available through Swift Package Manager. Add SRCircleProgress as a dependency to your Package.swift:
 ```Swift
-.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.4")
+.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.2.1")
 ```
 ## Usage
 The basic usage is as follows.
@@ -50,7 +50,7 @@ circleProgressView.progressLineColor = .systemBlue // The color shown for the po
 circleProgressView.progressLineWidth = 6 // Specifies the line width of the progress view.
 circleProgressView.backgroundLineWidth = 12 // Specifies the line width of the view behind the progress view.
 circleProgressView.animationDuration = 0.2 // Specifies the duration of the animation when setProgress(_:animated:) is executed
-circleProgressView.progressAngle = .lowerLeftToLowerRight // Change the shape of the progress view
+circleProgressView.progressAngle = .lowerLeftToLowerRight(offset: 0) // Change the shape of the progress view
 ```
 To change the shape of the progress view, use the `progressAngle` property.
 Possible values for `progressAngle` are as follows
