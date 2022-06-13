@@ -1,5 +1,5 @@
 # SRCircleProgress
-
+[![CI](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml)
 [![Release](https://img.shields.io/github/v/release/Ryu0118/SRCircleProgress)](https://github.com/Ryu0118/SRCircleProgress/releases/latest)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/StringTransform.svg)](https://cocoapods.org/pods/SRCircleProgress)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Ryu0118/SRCirclrProgress)
@@ -21,7 +21,7 @@ pod 'SRCircleProgress'
 ### Swift Package Manager
 SRCircleProgress is also available through Swift Package Manager. Add SRCircleProgress as a dependency to your Package.swift:
 ```Swift
-.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.0")
+.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.4")
 ```
 ## Usage
 The basic usage is as follows.
@@ -29,13 +29,11 @@ The basic usage is as follows.
 let circleProgressView = SRCircleProgress(frame: .zero)
 view.addSubview(circleProgressView)
 
-circleProgressView.translatesAutoresizingMaskIntoConstraints = false
-
 NSLayoutConstraint.activate([
     circleProgressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
     circleProgressView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
     circleProgressView.widthAnchor.constraint(equalToConstant: 150),
-    circleProgressView.heightAnchor.constraint(equalToConstant: 250),
+    circleProgressView.heightAnchor.constraint(equalToConstant: 150),
 ])
 ```
 To set the progress on the progress bar, 
@@ -46,7 +44,8 @@ The current progress is represented by a floating-point value between 0.0 and 1.
 
 ### Properties
 ```Swift
-circleProgressView.progress = 15 // Set the progress without animation.
+circleProgressView.progress = 0.6 // Set the progress without animation.
+circleProgressView.percent = 60 // Set the percent without animation
 circleProgressView.progressLineColor = .systemBlue // The color shown for the portion of the progress view that is filled.
 circleProgressView.progressLineWidth = 6 // Specifies the line width of the progress view.
 circleProgressView.backgroundLineWidth = 12 // Specifies the line width of the view behind the progress view.
@@ -63,6 +62,8 @@ enum ProgressAngle {
     case leftToRight
 }
 ```
-
-
-
+|topToTop|bottomToBottom|
+|---|---|
+|![topToTop](https://user-images.githubusercontent.com/87907656/173399400-fd6a3be6-80ae-46c6-ab73-ba86c4831842.png)|![bottomToBottom](https://user-images.githubusercontent.com/87907656/173399395-7fbf8aad-fd00-4b54-bd2e-4129a20c196f.png)|
+|topToTop|bottomToBottom|
+|![leftToRight](https://user-images.githubusercontent.com/87907656/173399384-781f3f3d-2f05-4e66-bb4e-a8585e828b57.png)|![lowerLeftToLowerRight](https://user-images.githubusercontent.com/87907656/173399405-e36b8b44-4479-4c5e-970b-5007803d0103.png)|
