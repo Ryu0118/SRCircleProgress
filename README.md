@@ -21,7 +21,7 @@ pod 'SRCircleProgress'
 ### Swift Package Manager
 SRCircleProgress is also available through Swift Package Manager. Add SRCircleProgress as a dependency to your Package.swift:
 ```Swift
-.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.0")
+.package(url: "https://github.com/Ryu0118/SRCircleProgress", from: "0.1.4")
 ```
 ## Usage
 The basic usage is as follows.
