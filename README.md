@@ -44,7 +44,8 @@ The current progress is represented by a floating-point value between 0.0 and 1.
 
 ### Properties
 ```Swift
-circleProgressView.progress = 15 // Set the progress without animation.
+circleProgressView.progress = 0.6 // Set the progress without animation.
+circleProgressView.percent = 60 // Set the percent without animation
 circleProgressView.progressLineColor = .systemBlue // The color shown for the portion of the progress view that is filled.
 circleProgressView.progressLineWidth = 6 // Specifies the line width of the progress view.
 circleProgressView.backgroundLineWidth = 12 // Specifies the line width of the view behind the progress view.
