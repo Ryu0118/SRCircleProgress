@@ -9,9 +9,7 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install bundled Gems
-        run: bundle install --jobs 4 --retry 3
       - name: Deploy to CocoaPods
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-        run: bundle exec pod trunk push --allow-warnings
+        run: pod trunk push --allow-warnings
