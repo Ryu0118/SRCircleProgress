@@ -1,5 +1,4 @@
 # SRCircleProgress
-[![CI](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/Ryu0118/SRCircleProgress/actions/workflows/release.yml)
 [![Release](https://img.shields.io/github/v/release/Ryu0118/SRCircleProgress)](https://github.com/Ryu0118/SRCircleProgress/releases/latest)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/StringTransform.svg)](https://cocoapods.org/pods/SRCircleProgress)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Ryu0118/SRCirclrProgress)
